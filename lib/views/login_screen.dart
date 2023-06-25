@@ -1,5 +1,4 @@
 import 'package:dailyexpenses/controllers/login_controller.dart';
-import 'package:dailyexpenses/views/Homepage/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -10,6 +9,8 @@ class LoginScreen extends StatelessWidget {
 
   String email = "";
   String password = "";
+
+  LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
