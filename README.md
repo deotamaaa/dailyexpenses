@@ -8,8 +8,8 @@ Project ini menggunakan API dari Daily Cost yang dikembangkan oleh [Fikri Maulan
 
 ### Package Yang Digunakan
 
-1. [Dio](https://pub.dev/packages/dio)
-2. [GetX](https://pub.dev/packages/get)
-3. [Htpp](https://pub.dev/packages/http)
+<!-- 1. [Dio](https://pub.dev/packages/dio) -->
+1. [GetX](https://pub.dev/packages/get)
+2. [Htpp](https://pub.dev/packages/http)
 
 Dst yang akan ditambahkan seiring berjalannya waktu dan sesuai keperluan.

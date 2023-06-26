@@ -22,6 +22,9 @@ class LoginController extends GetxController {
       } else {
         return null;
       }
-    } catch (e) {}
+    } catch (e) {
+      // TODO: HANDLE IF ERROR
+      throw Exception(e);
+    }
   }
 }

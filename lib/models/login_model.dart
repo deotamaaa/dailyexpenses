@@ -15,11 +15,11 @@ class LoginModel {
   }
 
   Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
-    _data['status'] = status;
-    _data['token'] = token;
-    _data['data'] = data.toJson();
-    return _data;
+    final Map<String, dynamic> dataTemp = <String, dynamic>{};
+    dataTemp['status'] = status;
+    dataTemp['token'] = token;
+    dataTemp['data'] = data.toJson();
+    return dataTemp;
   }
 }
 
@@ -37,9 +37,9 @@ class Data {
   }
 
   Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
-    _data['id'] = id;
-    _data['nama'] = nama;
-    return _data;
+    final data = <String, dynamic>{};
+    data['id'] = id;
+    data['nama'] = nama;
+    return data;
   }
 }
