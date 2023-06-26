@@ -1,15 +1,18 @@
 import 'package:dailyexpenses/controllers/auth_controller.dart';
 import 'package:dailyexpenses/utils/spacers.dart';
-import 'package:dailyexpenses/utils/widgets/widget_form.dart';
-import 'package:dailyexpenses/views/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LoginScreen extends StatelessWidget {
+import '../utils/widgets/widget_form.dart';
+
+class RegisterScreen extends StatelessWidget {
   AuthController loginController = Get.put(AuthController());
+
+  final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
+  String name = "";
   String email = "";
   String password = "";
 
@@ -17,7 +20,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login'),
+        title: const Text('Register'),
       ),
       body: Center(
         child: Padding(
@@ -27,7 +30,7 @@ class LoginScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                'Login Screen',
+                'Register Screen',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -35,35 +38,31 @@ class LoginScreen extends StatelessWidget {
               ),
               spaceHeight(),
               formInput(
-                formName: 'Email: ',
+                formName: 'Name: ',
+                controller: nameController,
+                hint: 'e.g: John Doe',
+              ),
+              formInput(
+                formName: 'Email:',
                 controller: emailController,
-                hint: 'Email@example.com',
+                hint: 'e.g: example@email.com',
               ),
               formInput(
                 formName: 'Password: ',
                 controller: passwordController,
                 obsecureText: true,
-                hint: 'Enter your password',
+                hint: 'enter your password',
               ),
-              SizedBox(
-                width: Get.width,
-                child: ElevatedButton(
-                  child: const Text('Login'),
-                  onPressed: () {
-                    loginController.login(
-                      emailController.text,
-                      passwordController.text,
-                    );
-                  },
-                ),
-              ),
-              spaceHeight(height: 10.0),
               SizedBox(
                 width: Get.width,
                 child: ElevatedButton(
                   child: const Text('Register'),
                   onPressed: () {
-                    Get.to(() => RegisterScreen());
+                    loginController.register(
+                      nameController.text,
+                      emailController.text,
+                      passwordController.text,
+                    );
                   },
                 ),
               ),

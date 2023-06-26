@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:dailyexpenses/utils/auth.dart';
 import 'package:http/http.dart' as http;
 
-class LoginServices {
+class AuthServices {
   static Future login(String pathUrl, Object body) async {
     var url = Auth.baseUrl + pathUrl;
 
