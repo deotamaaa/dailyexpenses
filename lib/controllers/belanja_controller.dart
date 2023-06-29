@@ -12,7 +12,7 @@ import 'package:get_storage/get_storage.dart';
 class BelanjaController extends GetxController {
   var isLoading = false.obs;
   var belanjaModel = Rxn<BelanjaModel>();
-  var belanjaList = <PengeluaranAll>[].obs;
+  var belanjaList = <Results>[].obs;
 
   @override
   void onInit() {
@@ -52,21 +52,30 @@ class BelanjaController extends GetxController {
   void getBelanjaAll() async {
     try {
       isLoading(true);
+
       final storage = GetStorage();
       var userId = storage.read('id');
-      var response =
-          await BelanjaServices.getBelanja('/api/pengeluaran/$userId', {});
+
+      var response = await BelanjaServices.getBelanja('/api/pengeluaran/$userId', {});
       var res = jsonDecode(response.body);
 
       if (res['status'] == 'Success') {
-        print(res['data']['results']);
-        print('============');
-        var dataBelanja = res['data']['results'] as List<dynamic>?;
-        if (dataBelanja != null) {
-          List<PengeluaranAll> list =
-              dataBelanja.map((e) => PengeluaranAll.fromJson(e)).toList();
-          belanjaList.value = list;
-        }
+        List<dynamic> rawDataList = res['data']['results'];
+
+        belanjaList.assignAll(rawDataList
+            .map((rawData) => Results(
+                  pengeluaranId: rawData['pengeluaran_id'],
+                  nama: rawData['nama'],
+                  tanggal: rawData['tanggal'],
+                  jumlah: rawData['jumlah'],
+                  pembayaran: rawData['pembayaran'],
+                  userId: rawData['user_id'],
+                  kategori: rawData['kategori'],
+                ))
+            .toList());
+
+        isLoading(false);
+        //
       } else {
         Get.dialog(const Center(
           child: Text('Belanjaan Gagal ditambahkan'),

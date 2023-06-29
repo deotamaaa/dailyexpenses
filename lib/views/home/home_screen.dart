@@ -62,8 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
-                IconButton(
-                    onPressed: () {}, icon: Icon(Icons.notifications_outlined))
+                IconButton(onPressed: () {}, icon: Icon(Icons.notifications_outlined))
               ],
             ),
             spaceHeight(),
@@ -78,15 +77,12 @@ class _HomeScreenState extends State<HomeScreen> {
             Expanded(
               child: Obx(
                 () => controller.isLoading.value
-                    ? const Center(
-                        child: CircularProgressIndicator(),
-                      )
+                    ? const Center(child: CircularProgressIndicator())
                     : ListView.builder(
                         itemCount: controller.belanjaList.length,
                         itemBuilder: (context, index) {
                           return ListTile(
-                            title: Text(controller
-                                .belanjaList[index].data.results[index].nama),
+                            title: Text(controller.belanjaList[index].nama),
                             subtitle: Text('test'),
                             // ...
                           );
