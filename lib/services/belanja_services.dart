@@ -22,4 +22,21 @@ class BelanjaServices {
     );
     return response;
   }
+
+  static Future getBelanja(String pathUrl, Object body) async {
+    var url = Auth.baseUrl + pathUrl;
+    final storage = GetStorage();
+    var token = storage.read('token');
+
+    var response = await http.get(
+      Uri.parse(url),
+      headers: {
+        "Accept": "application/json",
+        'Content-Type': 'application/json;charset=UTF-8',
+        'Charset': 'utf-8',
+        "Authorization": "Bearer $token"
+      },
+    );
+    return response;
+  }
 }

@@ -1,3 +1,4 @@
+import 'package:dailyexpenses/controllers/belanja_controller.dart';
 import 'package:dailyexpenses/utils/spacers.dart';
 import 'package:dailyexpenses/utils/widgets/menu_drawer.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final BelanjaController controller = Get.put(BelanjaController());
+
   String name = "";
 
   @override
@@ -69,6 +72,26 @@ class _HomeScreenState extends State<HomeScreen> {
               style: TextStyle(
                 fontSize: 26.0,
                 fontWeight: FontWeight.bold,
+              ),
+            ),
+            spaceHeight(),
+            Expanded(
+              child: Obx(
+                () => controller.isLoading.value
+                    ? const Center(
+                        child: CircularProgressIndicator(),
+                      )
+                    : ListView.builder(
+                        itemCount: controller.belanjaList.length,
+                        itemBuilder: (context, index) {
+                          return ListTile(
+                            title: Text(controller
+                                .belanjaList[index].data.results[index].nama),
+                            subtitle: Text('test'),
+                            // ...
+                          );
+                        },
+                      ),
               ),
             ),
           ],

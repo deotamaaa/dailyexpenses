@@ -1,15 +1,24 @@
 import 'dart:convert';
 
+import 'package:dailyexpenses/models/belanja/belanja_all_list_model.dart';
 import 'package:dailyexpenses/models/belanja/belanja_model.dart';
 import 'package:dailyexpenses/services/belanja_services.dart';
 import 'package:dailyexpenses/utils/widgets/modal_dialog.dart';
 import 'package:dailyexpenses/views/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 class BelanjaController extends GetxController {
   var isLoading = false.obs;
   var belanjaModel = Rxn<BelanjaModel>();
+  var belanjaList = <PengeluaranAll>[].obs;
+
+  @override
+  void onInit() {
+    super.onInit();
+    getBelanjaAll();
+  }
 
   postBelanja(nama, tanggal, jumlah, pembayaran, userId, kategori) async {
     try {
@@ -37,6 +46,37 @@ class BelanjaController extends GetxController {
       }
     } catch (e) {
       print(e);
+    }
+  }
+
+  void getBelanjaAll() async {
+    try {
+      isLoading(true);
+      final storage = GetStorage();
+      var userId = storage.read('id');
+      var response =
+          await BelanjaServices.getBelanja('/api/pengeluaran/$userId', {});
+      var res = jsonDecode(response.body);
+
+      if (res['status'] == 'Success') {
+        print(res['data']['results']);
+        print('============');
+        var dataBelanja = res['data']['results'] as List<dynamic>?;
+        if (dataBelanja != null) {
+          List<PengeluaranAll> list =
+              dataBelanja.map((e) => PengeluaranAll.fromJson(e)).toList();
+          belanjaList.value = list;
+        }
+      } else {
+        Get.dialog(const Center(
+          child: Text('Belanjaan Gagal ditambahkan'),
+        ));
+        Get.back();
+        return null;
+      }
+    } catch (e, stackTrace) {
+      print('Ini error $e');
+      print('Ini stacktrace $stackTrace');
     }
   }
 }
