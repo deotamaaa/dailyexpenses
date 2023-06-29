@@ -62,7 +62,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
-                IconButton(onPressed: () {}, icon: Icon(Icons.notifications_outlined))
+                IconButton(
+                    onPressed: () {}, icon: Icon(Icons.notifications_outlined))
               ],
             ),
             spaceHeight(),
@@ -79,12 +80,28 @@ class _HomeScreenState extends State<HomeScreen> {
                 () => controller.isLoading.value
                     ? const Center(child: CircularProgressIndicator())
                     : ListView.builder(
-                        itemCount: controller.belanjaList.length,
+                        itemCount: controller.belanjaList.length > 4
+                            ? 4
+                            : controller.belanjaList.length,
                         itemBuilder: (context, index) {
-                          return ListTile(
-                            title: Text(controller.belanjaList[index].nama),
-                            subtitle: Text('test'),
-                            // ...
+                          return Container(
+                            margin: const EdgeInsets.only(bottom: 10.0),
+                            color: Colors.grey[200],
+                            child: ListTile(
+                              title: Text(controller.belanjaList[index].nama),
+                              subtitle:
+                                  Text(controller.belanjaList[index].tanggal),
+                              trailing: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(controller.belanjaList[index].jumlah
+                                      .toString()),
+                                  Text(
+                                      controller.belanjaList[index].pembayaran),
+                                ],
+                              ),
+                            ),
                           );
                         },
                       ),

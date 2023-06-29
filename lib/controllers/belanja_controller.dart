@@ -56,7 +56,8 @@ class BelanjaController extends GetxController {
       final storage = GetStorage();
       var userId = storage.read('id');
 
-      var response = await BelanjaServices.getBelanja('/api/pengeluaran/$userId', {});
+      var response =
+          await BelanjaServices.getBelanja('/api/pengeluaran/$userId', {});
       var res = jsonDecode(response.body);
 
       if (res['status'] == 'Success') {
