@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:dailyexpenses/src/utils/auth.dart';
+import '../../utils/auth.dart';
 import 'package:get/state_manager.dart';
 import 'package:http/http.dart' as http;
 

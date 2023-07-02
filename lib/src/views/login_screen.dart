@@ -1,10 +1,10 @@
-import 'package:dailyexpenses/src/controllers/auth_controller.dart';
-import 'package:dailyexpenses/src/shared/extension.dart';
+import '../controllers/auth_controller.dart';
+import '../shared/extension.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
-import '../utils/widgets/widget_form.dart';
+import '../widgets/widget_form.dart';
 import 'register_screen.dart';
 
 class LoginScreen extends StatelessWidget {

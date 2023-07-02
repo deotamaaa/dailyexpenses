@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:dailyexpenses/src/models/login_model.dart';
-import 'package:dailyexpenses/src/services/auth/auth_services.dart';
-import 'package:dailyexpenses/src/views/login_screen.dart';
+import '../models/login_model.dart';
+import '../services/auth/auth_services.dart';
+import '../views/login_screen.dart';
 import 'package:get/get.dart';
 
 class AuthController extends GetxController {

@@ -1,10 +1,10 @@
 import 'dart:convert';
 
-import 'package:dailyexpenses/src/models/belanja/belanja_all_list_model.dart';
-import 'package:dailyexpenses/src/models/belanja/belanja_model.dart';
-import 'package:dailyexpenses/src/services/belanja_services.dart';
-import 'package:dailyexpenses/src/utils/widgets/modal_dialog.dart';
-import 'package:dailyexpenses/src/views/home/home_screen.dart';
+import '../models/belanja/belanja_all_list_model.dart';
+import '../models/belanja/belanja_model.dart';
+import '../services/belanja_services.dart';
+import '../widgets/modal_dialog.dart';
+import '../views/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';

@@ -1,4 +1,4 @@
-import 'package:dailyexpenses/src/utils/spacers.dart';
+import '../shared/extension.dart';
 import 'package:flutter/material.dart';
 
 Widget formInput({
@@ -28,7 +28,7 @@ Widget formInput({
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Text(formName, style: const TextStyle(fontSize: 14.0)),
-      spaceHeight(height: 8.0),
+      8.height,
       TextFormField(
         keyboardType: keyboardType,
         cursorColor: Colors.black,
@@ -88,7 +88,7 @@ Widget formInput({
         onChanged: onChanged,
         onTap: onTap,
       ),
-      spaceHeight(height: 12.0),
+      12.height,
     ],
   );
 }

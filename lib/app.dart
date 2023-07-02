@@ -1,4 +1,4 @@
-import 'package:dailyexpenses/src/shared/app_theme.dart';
+import 'src/shared/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
