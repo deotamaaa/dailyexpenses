@@ -331,6 +331,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.2.4"
+  reactive_forms:
+    dependency: "direct main"
+    description:
+      name: reactive_forms
+      sha256: f799c60c7ee43facb8a991b2126138312f80db5c3b4339c5823379314bcd8b5c
+      url: "https://pub.dev"
+    source: hosted
+    version: "16.0.0"
   sky_engine:
     dependency: transitive
     description: flutter

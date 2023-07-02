@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:dailyexpenses/utils/auth.dart';
+import 'package:dailyexpenses/src/utils/auth.dart';
 import 'package:http/http.dart' as http;
 
 class AuthServices {

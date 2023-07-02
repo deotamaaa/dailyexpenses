@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-import 'package:dailyexpenses/models/login_model.dart';
-import 'package:dailyexpenses/services/auth_services.dart';
-import 'package:dailyexpenses/views/home/home_screen.dart';
-import 'package:dailyexpenses/views/login_screen.dart';
+import 'package:dailyexpenses/src/models/login_model.dart';
+import 'package:dailyexpenses/src/services/auth_services.dart';
+import 'package:dailyexpenses/src/views/home/home_screen.dart';
+import 'package:dailyexpenses/src/views/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';

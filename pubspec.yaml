@@ -20,6 +20,7 @@ dependencies:
   google_fonts: ^4.0.4
   flutter_svg: ^2.0.7
   lottie: ^2.4.0
+  reactive_forms: ^16.0.0
 
 dev_dependencies:
   flutter_test:

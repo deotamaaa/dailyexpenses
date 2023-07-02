@@ -1,5 +1,5 @@
-import 'package:dailyexpenses/controllers/auth_controller.dart';
-import 'package:dailyexpenses/shared/extension.dart';
+import 'package:dailyexpenses/src/controllers/auth_controller.dart';
+import 'package:dailyexpenses/src/shared/extension.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
@@ -66,7 +66,6 @@ class LoginScreen extends StatelessWidget {
             child: ElevatedButton(
               child: const Text('Login'),
               onPressed: () {
-                print('email: ${emailController.text}');
                 if (emailController.text.isNotEmpty ||
                     passwordController.text.isNotEmpty) {
                   loginController.login(
