@@ -8,7 +8,8 @@ import 'package:google_fonts/google_fonts.dart';
 void main() async {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: Colors.transparent, // Set the desired status bar color
-    statusBarBrightness: Brightness.dark, // Set the status bar text color to dark
+    statusBarBrightness:
+        Brightness.dark, // Set the status bar text color to dark
     statusBarIconBrightness: Brightness.dark,
   ));
   await GetStorage.init();
@@ -23,7 +24,6 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Daily Expenses',
-      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         textTheme: GoogleFonts.interTextTheme(),
         colorScheme: Theme.of(context).colorScheme.copyWith(
