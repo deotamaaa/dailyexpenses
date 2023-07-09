@@ -53,6 +53,10 @@ class LoginScreen extends StatelessWidget {
             16.height,
             ReactiveTextField(
               formControlName: 'email',
+              validationMessages: {
+                'required': (error) => 'Field wajib diisi',
+                'email': (error) => 'Email tidak valid',
+              },
               decoration: const InputDecoration(
                 labelText: 'Email',
                 border: OutlineInputBorder(),
@@ -61,6 +65,11 @@ class LoginScreen extends StatelessWidget {
             16.height,
             ReactiveTextField(
               formControlName: 'password',
+              validationMessages: {
+                'required': (error) => 'Field wajib diisi',
+                'minLength': (error) => 'Password minimal 6 karakter',
+                'maxLength': (error) => 'Password maksimal 20 karakter',
+              },
               obscureText: true,
               decoration: const InputDecoration(
                 labelText: 'Password',
