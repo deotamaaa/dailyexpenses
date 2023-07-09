@@ -4,6 +4,10 @@ class BaseClient extends GetConnect {
   @override
   void onInit() {
     super.onInit();
-    httpClient.baseUrl = 'https://dailycost.my.id/api';
+    httpClient.baseUrl = 'https://dailycost.my.id';
+    httpClient.addRequestModifier<void>((request) {
+      request.headers['Content-Type'] = 'application/json';
+      return request;
+    });
   }
 }

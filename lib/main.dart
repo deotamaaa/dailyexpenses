@@ -13,5 +13,5 @@ Future<void> main() async {
     statusBarIconBrightness: Brightness.dark,
   ));
   await GetStorage.init();
-  runApp(const MyApp());
+  runApp(MyApp());
 }

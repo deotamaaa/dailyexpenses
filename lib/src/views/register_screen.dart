@@ -1,21 +1,19 @@
-import '../controllers/auth_controller.dart';
-import 'login_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class RegisterScreen extends StatelessWidget {
-  AuthController loginController = Get.put(AuthController());
+import 'login_screen.dart';
 
+class RegisterScreen extends StatelessWidget {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  String name = "";
-  String email = "";
-  String password = "";
+  final String name = "";
+  final String email = "";
+  final String password = "";
 
   RegisterScreen({super.key});
 
