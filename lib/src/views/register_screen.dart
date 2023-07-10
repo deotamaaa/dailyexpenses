@@ -1,31 +1,29 @@
-import 'package:dailyexpenses/controllers/auth_controller.dart';
-import 'package:dailyexpenses/utils/spacers.dart';
-import 'package:dailyexpenses/views/login_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class RegisterScreen extends StatelessWidget {
-  AuthController loginController = Get.put(AuthController());
+import 'login_screen.dart';
 
+class RegisterScreen extends StatelessWidget {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  String name = "";
-  String email = "";
-  String password = "";
+  final String name = "";
+  final String email = "";
+  final String password = "";
 
   RegisterScreen({super.key});
 
   @override
-  OutlineInputBorder _outlineBorder = OutlineInputBorder(
-    borderSide: BorderSide(width: 1),
+  final OutlineInputBorder _outlineBorder = OutlineInputBorder(
+    borderSide: const BorderSide(width: 1),
     borderRadius: BorderRadius.circular(12.0),
   );
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
@@ -35,7 +33,7 @@ class RegisterScreen extends StatelessWidget {
             const SizedBox(height: 40.0),
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.arrow_back),
+              icon: const Icon(Icons.arrow_back),
             ),
             const SizedBox(height: 20.0),
             Padding(
@@ -52,7 +50,7 @@ class RegisterScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 20.0),
                   Container(
-                    constraints: BoxConstraints(maxWidth: 310),
+                    constraints: const BoxConstraints(maxWidth: 310),
                     child: Text(
                       "Unlock all the features to manage income expenses and goals",
                       style: GoogleFonts.inter(
@@ -105,11 +103,11 @@ class RegisterScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20.0),
-                  Container(
+                  SizedBox(
                     width: double.infinity,
                     child: TextButton(
                       style: TextButton.styleFrom(
-                        backgroundColor: Color(0xffFF6600),
+                        backgroundColor: const Color(0xffFF6600),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20),
                         ),
@@ -203,7 +201,7 @@ class RegisterScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 20.0),
                   Container(
-                    constraints: BoxConstraints(maxWidth: 264),
+                    constraints: const BoxConstraints(maxWidth: 264),
                     child: Align(
                       alignment: Alignment.center,
                       child: Text.rich(
