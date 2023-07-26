@@ -1,6 +1,6 @@
-import '../../controllers/belanja_controller.dart';
-import '../../shared/extension.dart';
-import '../../widgets/menu_drawer.dart';
+import 'package:dailyexpenses/controllers/belanja_controller.dart';
+import 'package:dailyexpenses/utils/spacers.dart';
+import 'package:dailyexpenses/utils/widgets/menu_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            16.height,
+            spaceHeight(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -63,11 +63,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
                 IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.notifications_outlined))
+                    onPressed: () {}, icon: Icon(Icons.notifications_outlined))
               ],
             ),
-            16.height,
+            spaceHeight(),
             const Text(
               'Latest Purchase...',
               style: TextStyle(
@@ -75,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            16.height,
+            spaceHeight(),
             Expanded(
               child: Obx(
                 () => controller.isLoading.value

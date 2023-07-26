@@ -1,6 +1,6 @@
-import '../../controllers/belanja_controller.dart';
-import '../../shared/extension.dart';
-import '../../widgets/widget_form.dart';
+import 'package:dailyexpenses/controllers/belanja_controller.dart';
+import 'package:dailyexpenses/utils/spacers.dart';
+import 'package:dailyexpenses/utils/widgets/widget_form.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -57,37 +57,37 @@ class _BelanjaScreenState extends State<BelanjaScreen> {
               'Ini Buat Belanjaan',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            16.height,
+            spaceHeight(),
             formInput(
               formName: 'Nama Barang',
               controller: namaBarangController,
               hint: 'Masukkan Nama Barang',
             ),
-            16.height,
+            spaceHeight(),
             formInput(
               formName: 'Tanggal Pembelian',
               controller: tanggalBeliController,
               hint: 'Masukkan Tanggal Pembelian',
             ),
-            16.height,
+            spaceHeight(),
             formInput(
               formName: 'Jumlah Pembelian',
               controller: jumlahBeliController,
               hint: 'Masukkan Jumlah Pembelian',
             ),
-            16.height,
+            spaceHeight(),
             formInput(
               formName: 'Pembayaran',
               controller: pembayaranController,
               hint: 'Masukkan Pembayaran',
             ),
-            16.height,
+            spaceHeight(),
             formInput(
               formName: 'Kategori',
               controller: kategoriController,
               hint: 'Masukkan Kategori',
             ),
-            16.height,
+            spaceHeight(),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(

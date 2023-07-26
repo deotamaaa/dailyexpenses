@@ -1,6 +1,6 @@
-import 'modal_dialog.dart';
-import '../views/belanja/belanja_screen.dart';
-import '../views/login_screen.dart';
+import 'package:dailyexpenses/utils/widgets/modal_dialog.dart';
+import 'package:dailyexpenses/views/belanja/belanja_screen.dart';
+import 'package:dailyexpenses/views/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
