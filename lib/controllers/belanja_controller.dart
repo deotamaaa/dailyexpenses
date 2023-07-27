@@ -22,7 +22,11 @@ class BelanjaController extends GetxController {
 
   postBelanja(nama, tanggal, jumlah, pembayaran, userId, kategori) async {
     try {
-      var response = await BelanjaServices.postBelanja('api/pengeluaran', {
+      final storage = GetStorage();
+      var userId = storage.read('id');
+
+      var response =
+          await BelanjaServices.postBelanja('api/pengeluaran/$userId', {
         "nama": nama,
         "tanggal": tanggal,
         "jumlah": jumlah,
@@ -38,10 +42,11 @@ class BelanjaController extends GetxController {
           (value) => Get.offAll(() => const HomeScreen()),
         );
       } else {
-        Get.dialog(const Center(
-          child: Text('Belanjaan Gagal ditambahkan'),
-        ));
+        print(res);
+        Get.dialog(const Center(child: CircularProgressIndicator()));
         Get.back();
+        Get.dialog(
+            modalDialogFailed('Pastikan data yang dimasukkan sudah benar!'));
         return null;
       }
     } catch (e) {

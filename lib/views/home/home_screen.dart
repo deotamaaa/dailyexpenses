@@ -1,6 +1,7 @@
 import 'package:dailyexpenses/controllers/belanja_controller.dart';
 import 'package:dailyexpenses/utils/spacers.dart';
 import 'package:dailyexpenses/utils/widgets/menu_drawer.dart';
+import 'package:dailyexpenses/views/belanja/belanja_all_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -67,12 +68,23 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
             spaceHeight(),
-            const Text(
-              'Latest Purchase...',
-              style: TextStyle(
-                fontSize: 26.0,
-                fontWeight: FontWeight.bold,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
+                  'Latest Purchase...',
+                  style: TextStyle(
+                    fontSize: 26.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Get.to(() => const BelanjaAllListScreen());
+                  },
+                  child: const Text('See All'),
+                ),
+              ],
             ),
             spaceHeight(),
             Expanded(
