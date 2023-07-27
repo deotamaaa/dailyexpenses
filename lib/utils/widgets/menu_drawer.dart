@@ -17,9 +17,16 @@ class MenuDrawer extends StatelessWidget {
         children: [
           const DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: const Color(0xffFF6600),
             ),
-            child: Text('Ini Menu'),
+            child: Column(
+              children: [
+                CircleAvatar(
+                  backgroundColor: Colors.white,
+                  child: const Icon(Icons.person),
+                )
+              ],
+            ),
           ),
           ListTile(
             leading: const Icon(Icons.shopping_bag),
@@ -27,6 +34,11 @@ class MenuDrawer extends StatelessWidget {
             onTap: () {
               Get.to(() => const BelanjaScreen());
             },
+          ),
+          ListTile(
+            leading: const Icon(Icons.note_add),
+            title: const Text('Buat Catatan'),
+            onTap: () {},
           ),
           ListTile(
             leading: const Icon(Icons.logout),

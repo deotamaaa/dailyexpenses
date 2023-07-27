@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:dailyexpenses/models/login_model.dart';
 import 'package:dailyexpenses/services/auth_services.dart';
+import 'package:dailyexpenses/utils/widgets/modal_dialog.dart';
 import 'package:dailyexpenses/views/home/home_screen.dart';
 import 'package:dailyexpenses/views/login_screen.dart';
 import 'package:flutter/material.dart';
@@ -31,9 +32,7 @@ class AuthController extends GetxController {
       } else {
         Get.dialog(const Center(child: CircularProgressIndicator()));
         Get.back();
-        Get.dialog(const Center(
-          child: Text('Login Gagal'),
-        ));
+        Get.dialog(modalDialogFailed(res['message']));
         return null;
       }
     } catch (e) {

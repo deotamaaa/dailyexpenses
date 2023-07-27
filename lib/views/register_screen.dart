@@ -34,7 +34,9 @@ class RegisterScreen extends StatelessWidget {
           children: [
             const SizedBox(height: 40.0),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.back();
+              },
               icon: Icon(Icons.arrow_back),
             ),
             const SizedBox(height: 20.0),
