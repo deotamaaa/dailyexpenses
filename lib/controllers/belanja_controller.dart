@@ -10,9 +10,10 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
 class BelanjaController extends GetxController {
-  var isLoading = false.obs;
+  var isLoading = true.obs;
   var belanjaModel = Rxn<BelanjaModel>();
   var belanjaList = <Results>[].obs;
+  final storage = GetStorage();
 
   @override
   void onInit() {
@@ -22,7 +23,6 @@ class BelanjaController extends GetxController {
 
   postBelanja(nama, tanggal, jumlah, pembayaran, userId, kategori) async {
     try {
-      final storage = GetStorage();
       var userId = storage.read('id');
 
       var response =
@@ -58,7 +58,6 @@ class BelanjaController extends GetxController {
     try {
       isLoading(true);
 
-      final storage = GetStorage();
       var userId = storage.read('id');
 
       var response =
