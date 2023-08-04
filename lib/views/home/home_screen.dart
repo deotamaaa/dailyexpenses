@@ -5,6 +5,7 @@ import 'package:dailyexpenses/utils/spacers.dart';
 import 'package:dailyexpenses/utils/widgets/menu_drawer.dart';
 import 'package:dailyexpenses/utils/widgets/tipe_deposit.dart';
 import 'package:dailyexpenses/views/belanja/belanja_all_screen.dart';
+import 'package:dailyexpenses/views/saldo/saldo_tambah_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -99,7 +100,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(() => SaldoTambah());
+                    },
                     child: Row(children: [
                       const Text('Top Up Saldo'),
                       const Icon(Icons.add),

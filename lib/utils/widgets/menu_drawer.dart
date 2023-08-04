@@ -1,6 +1,7 @@
 import 'package:dailyexpenses/utils/widgets/modal_dialog.dart';
 import 'package:dailyexpenses/views/belanja/belanja_screen.dart';
 import 'package:dailyexpenses/views/login_screen.dart';
+import 'package:dailyexpenses/views/saldo/saldo_tambah_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -39,6 +40,13 @@ class MenuDrawer extends StatelessWidget {
             leading: const Icon(Icons.note_add),
             title: const Text('Buat Catatan'),
             onTap: () {},
+          ),
+          ListTile(
+            leading: const Icon(Icons.money),
+            title: const Text('Top Up Saldo'),
+            onTap: () {
+              Get.to(() => SaldoTambah());
+            },
           ),
           ListTile(
             leading: const Icon(Icons.logout),
