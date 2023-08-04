@@ -11,7 +11,7 @@ class BelanjaAllListScreen extends StatefulWidget {
 }
 
 class _BelanjaAllListScreenState extends State<BelanjaAllListScreen> {
-  final BelanjaController controller = Get.put(BelanjaController());
+  final BelanjaController controller = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -33,9 +33,7 @@ class _BelanjaAllListScreenState extends State<BelanjaAllListScreen> {
                 () => controller.isLoading.value
                     ? const Center(child: CircularProgressIndicator())
                     : ListView.builder(
-                        itemCount: controller.belanjaList.length > 10
-                            ? 10
-                            : controller.belanjaList.length,
+                        itemCount: controller.belanjaList.length,
                         itemBuilder: (context, index) {
                           return Container(
                             margin: const EdgeInsets.only(bottom: 10.0),
